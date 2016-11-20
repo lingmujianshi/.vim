@@ -1,0 +1,46 @@
+
+if &compatible
+      set nocompatible
+endif
+
+syntax on        "シンタックスハイライト
+"set autoindent   "改行した後の行のインデントの深さを、前の行と同じに
+set expandtab    "タブで挿入する文字をスペースに
+set tabstop=4    "タブの幅を指定します。
+set shiftwidth=4 "自動インデントの幅を指定します
+set cursorline   "カーソルのある行にアンダーラインを引きます。
+set number       "行番号を表示します。
+"set statusline=%F%r%h%= "ステータスラインに表示
+set whichwrap=b,s,[,],<,>,~ "行の先頭や終わりでの移動
+set backspace=start,eol,indent "バックスペースで削除、改行、先頭移動
+
+
+function! s:source_rc(path, ...) abort "{{{
+    let use_global = get(a:000, 0, !has('vim_starting'))
+    let abspath = resolve(expand('~/.vim/rc/' . a:path))
+    if !use_global
+      execute 'source' fnameescape(abspath)
+      return
+    endif
+
+    " substitute all 'set' to 'setglobal'
+    let content = map(readfile(abspath),
+       \ 'substitute(v:val, "^\\W*\\zsset\\ze\\W", "setglobal", "")')
+    " create tempfile and source the tempfile
+    let tempfile = tempname()
+    try
+        call writefile(content, tempfile)
+        execute printf('source %s', fnameescape(tempfile))
+    finally
+        if filereadable(tempfile)
+            call delete(tempfile)
+        endif
+    endtry
+endfunction "}}}
+
+call s:source_rc('dein.rc.vim')
+
+filetype plugin indent on
+syntax enable
+
+

@@ -14,10 +14,17 @@ set number       "行番号を表示します。
 set whichwrap=b,s,[,],<,>,~ "行の先頭や終わりでの移動
 set backspace=start,eol,indent "バックスペースで削除、改行、先頭移動
 
+if has('win32')
+    let g:DIR = expand('~/_vimfiles')
+else
+    let g:DIR = expand('~/.vim')    
+endif
 
 function! s:source_rc(path, ...) abort "{{{
+    let g:aaa = 'abc'
     let use_global = get(a:000, 0, !has('vim_starting'))
-    let abspath = resolve(expand('~/.vim/rc/' . a:path))
+    let abspath = resolve(expand(g:DIR . '/rc/' . a:path))
+    let g:aaa = abspath
     if !use_global
       execute 'source' fnameescape(abspath)
       return

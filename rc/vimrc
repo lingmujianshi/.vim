@@ -21,10 +21,8 @@ else
 endif
 
 function! s:source_rc(path, ...) abort "{{{
-    let g:aaa = 'abc'
     let use_global = get(a:000, 0, !has('vim_starting'))
     let abspath = resolve(expand(g:DIR . '/rc/' . a:path))
-    let g:aaa = abspath
     if !use_global
       execute 'source' fnameescape(abspath)
       return

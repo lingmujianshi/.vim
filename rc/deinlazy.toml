@@ -1,16 +1,24 @@
-
+# dein.vim
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
+#neocomplete
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'
 if = "has('lua')"
 on_event = 'InsertEnter'
+
 hook_add = '''
-  let g:neocomplete#enable_at_startup = 1
-  source ~/.vim/rc/plugins/neocomplete.rc.vim
+    let g:neocomplete#enable_at_startup = 1
+    if has('win32')
+        "windows
+        source ~/_vimfiles/rc/plugins/neocomplete.rc.vim
+    else
+        source ~/.vim/rc/plugins/neocomplete.rc.vim
+    endif
 '''
 
+#jedi-vim (Python complete tool)
 [[plugins]]
 repo = 'davidhalter/jedi-vim'
 on_ft = 'python'

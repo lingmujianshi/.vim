@@ -1,6 +1,6 @@
 "dein
 if has('win32')
-    set runtimepath+=~/_vimfiles/dein/repos/github.com/Shougo/dein.vim
+    set runtimepath+=~/vimfiles/dein/repos/github.com/Shougo/dein.vim
 else
     set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
 endif

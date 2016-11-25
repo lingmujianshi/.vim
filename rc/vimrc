@@ -9,7 +9,7 @@ filetype plugin indent off
 
 "設定フォルダ
 if has('win32')
-    let g:DIR = expand('~/_vimfiles')
+    let g:DIR = expand('~/vimfiles')
 else
     let g:DIR = expand('~/.vim')    
 endif

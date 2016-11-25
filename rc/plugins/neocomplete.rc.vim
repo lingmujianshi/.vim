@@ -14,9 +14,9 @@ let g:neocomplete#sources#dictionary#dictionaries = {
     \ 'default' : '',
     \ 'vimshell' : $HOME.'/.vimshell_hist',
     \ 'scheme' : $HOME.'/.gosh_completions',
-    \ 'vb' : $HOME.'/.vim/dict/vbscript.dict',
-    \ 'jscript' : $HOME.'/.vim/dict/jscript.dict',
-    \ 'dosbatch' : $HOME.'/.vim/dict/dosbatch.dict'
+    \ 'vb' : g:DIR . '/dict/vbscript.dict',
+    \ 'jscript' : g:DIR . '/dict/jscript.dict',
+    \ 'dosbatch' : g:DIR . '/dict/dosbatch.dict'
 \ }
 
 " Define keyword.

@@ -8,23 +8,14 @@ endif
 call dein#begin(expand(g:DIR . '/dein'))
 
 " プラグインが実際にインストールされるディレクトリ
-let g:bbb = '000'
-
 let s:dein_dir = expand(g:DIR . '/dein')
-let g:bbb = s:dein_dir
 
 " dein.vim 本体
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
-let g:ccc = '000'
-let g:ccc = s:dein_repo_dir
-
 " dein.vim がなければ github から落としてくる
-let g:ddd = '0' 
 if &runtimepath !~# '/dein.vim'
-  let g:ddd = '1'
   if !isdirectory(s:dein_repo_dir)
-    let g:ddd = '2'
     execute '!git clone https://github.com/Shougo/dein.vim' s:dein_repo_dir
   endif
   execute 'set runtimepath^=' . fnamemodify(s:dein_repo_dir, ':p')
@@ -32,7 +23,6 @@ endif
 
 " 設定開始
 if dein#load_state(s:dein_dir)
-  let g:ddd = '1'
   call dein#begin(s:dein_dir)
 
   " プラグインリストを収めた TOML ファイル

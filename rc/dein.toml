@@ -6,5 +6,5 @@ nnoremap <Leader>l :EvervimNotebookList<CR>
 nnoremap <Leader>s :EvervimSearchByQuery<Space>
 nnoremap <Leader>c :EvervimCreateNote<CR>
 onoremap <Leader>t :EvervimListTags<CR>
-let g:evervim_devtoken=readfile($HOME . '/_evernoteToken')[1]
+let g:evervim_devtoken=readfile(g:DIR . '/_evernoteToken')[1]
 '''

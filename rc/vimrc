@@ -1,25 +1,20 @@
-
+"VI互換動作を無効
 if &compatible
       set nocompatible
 endif
 
-syntax on        "シンタックスハイライト
-"set autoindent   "改行した後の行のインデントの深さを、前の行と同じに
-set expandtab    "タブで挿入する文字をスペースに
-set tabstop=4    "タブの幅を指定します。
-set shiftwidth=4 "自動インデントの幅を指定します
-set cursorline   "カーソルのある行にアンダーラインを引きます。
-set number       "行番号を表示します。
-"set statusline=%F%r%h%= "ステータスラインに表示
-set whichwrap=b,s,[,],<,>,~ "行の先頭や終わりでの移動
-set backspace=start,eol,indent "バックスペースで削除、改行、先頭移動
+" 一旦ファイルタイプ関連を無効化する
+filetype off
+filetype plugin indent off
 
+"設定フォルダ
 if has('win32')
     let g:DIR = expand('~/_vimfiles')
 else
     let g:DIR = expand('~/.vim')    
 endif
 
+"設定ファイルを読み込む関数
 function! s:source_rc(path, ...) abort "{{{
     let use_global = get(a:000, 0, !has('vim_starting'))
     let abspath = resolve(expand(g:DIR . '/rc/' . a:path))
@@ -43,8 +38,11 @@ function! s:source_rc(path, ...) abort "{{{
     endtry
 endfunction "}}}
 
+"設定ファイルの読み込み
 call s:source_rc('dein.rc.vim')
+call s:source_rc('setting.vim')
 
+" ファイルタイプ関連を有効にする
 filetype plugin indent on
 syntax enable
 

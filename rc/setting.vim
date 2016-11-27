@@ -15,8 +15,7 @@ set cmdheight=1
 "ステータをスウィンドウ下側に常に表示
 set laststatus=2
 "ステータス表示形式
-set statusline=%f%r%h%= 
-
+set statusline=%f%r%h%=
 "行の先頭や終わりでの移動
 set whichwrap=b,s,[,],<,>,~
 "バックスペースで削除、改行、先頭移動
@@ -27,3 +26,7 @@ set hlsearch
 nmap <C-l> <C-l>:nohlsearch<CR>
 " 現在のカーソルの色をつける
 set cursorline
+highlight CursorLine cterm=None ctermfg=None ctermbg=LightGray
+"不可視文字を表示(スペース、タブなど)
+set list
+set listchars=tab:»-,trail:-,nbsp:%,eol:↲

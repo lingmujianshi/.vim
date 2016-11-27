@@ -1,14 +1,5 @@
-# evervim
-[[plugins]]
-repo = 'kakkyz81/evervim'
-hook_add ='''
-nnoremap <Leader>l :EvervimNotebookList<CR>
-nnoremap <Leader>s :EvervimSearchByQuery<Space>
-nnoremap <Leader>c :EvervimCreateNote<CR>
-onoremap <Leader>t :EvervimListTags<CR>
-let g:evervim_devtoken=readfile(g:DIR . '/_evernoteToken')[1]
-'''
 
+#lightline
 [[plugins]]
 repo = 'itchyny/lightline.vim'
 hook_add = '''
@@ -19,4 +10,3 @@ hook_add = '''
         source ~/.vim/rc/plugins/lightline.rc.vim
     endif
 '''
-

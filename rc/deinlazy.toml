@@ -1,4 +1,4 @@
-# dein.vim
+:# dein.vim
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
@@ -28,3 +28,15 @@ hook_add = '''
   let g:jedi#popup_on_dot = 0
   autocmd FileType python setlocal completeopt-=preview
 '''
+
+# evervim
+[[plugins]]
+repo = 'kakkyz81/evervim'
+hook_add ='''
+nnoremap <Leader>l :EvervimNotebookList<CR>
+nnoremap <Leader>s :EvervimSearchByQuery<Space>
+nnoremap <Leader>c :EvervimCreateNote<CR>
+onoremap <Leader>t :EvervimListTags<CR>
+let g:evervim_devtoken=readfile(g:DIR . '/_evernoteToken')[1]
+'''
+

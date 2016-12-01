@@ -1,4 +1,4 @@
-"シンタックスハイライト
+﻿"シンタックスハイライト
 syntax on
 "改行した後の行のインデントの深さを、前の行と同じに
 set noautoindent
@@ -26,7 +26,7 @@ set hlsearch
 nmap <C-l> <C-l>:nohlsearch<CR>
 " 現在のカーソルの色をつける
 set cursorline
-highlight CursorLine cterm=None ctermfg=None ctermbg=LightGray
+"highlight CursorLine cterm=None ctermfg=None ctermbg=None
 "不可視文字を表示(スペース、タブなど)
 set list
-set listchars=tab:»-,trail:-,nbsp:%,eol:↲
+set listchars=eol:<,trail:-,nbsp:%,tab:>-

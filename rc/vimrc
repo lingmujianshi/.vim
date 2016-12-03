@@ -3,7 +3,7 @@ set fileencodings=utf-8,cp932
 
 "VI互換動作を無効
 if &compatible
-      set nocompatible
+  set nocompatible
 endif
 
 " 一旦ファイルタイプ関連を無効化する

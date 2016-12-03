@@ -1,3 +1,6 @@
+"読み込み時の文字コード
+set fileencodings=utf-8,cp932
+
 "VI互換動作を無効
 if &compatible
       set nocompatible
@@ -11,7 +14,7 @@ filetype plugin indent off
 if has('win32')
     let g:DIR = expand('~/vimfiles')
 else
-    let g:DIR = expand('~/.vim')    
+    let g:DIR = expand('~/.vim')
 endif
 
 "設定ファイルを読み込む関数
@@ -41,9 +44,8 @@ endfunction "}}}
 "設定ファイルの読み込み
 call s:source_rc('dein.rc.vim')
 call s:source_rc('setting.vim')
+call s:source_rc('capture.vim')
 
 " ファイルタイプ関連を有効にする
 filetype plugin indent on
 syntax enable
-
-

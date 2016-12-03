@@ -5,7 +5,7 @@ hook_add ='''
 nnoremap <Leader>l :EvervimNotebookList<CR>
 nnoremap <Leader>s :EvervimSearchByQuery<Space>
 nnoremap <Leader>c :EvervimCreateNote<CR>
-onoremap <Leader>t :EvervimListTags<CR>
+nnoremap <Leader>t :EvervimListTags<CR>
 let g:evervim_devtoken=readfile(g:DIR . '/_evernoteToken')[1]
 '''
 

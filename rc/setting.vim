@@ -30,3 +30,15 @@ set cursorline
 "不可視文字を表示(スペース、タブなど)
 set list
 set listchars=eol:<,trail:-,nbsp:%,tab:>-
+"Exコマンド候補を選べるように
+set wildmenu
+set wildmode=full
+"履歴コマンドキーマップ
+cnoremap <C-p> <Up>
+cnoremap <C-n> <Down>
+"検索で大文字小文字区別しない
+set ignorecase
+"しかし大文字で検索したときは区別する
+set smartcase
+"修正したファイルが保存しなくても他のバッファに移れる
+set hidden

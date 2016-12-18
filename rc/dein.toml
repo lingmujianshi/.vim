@@ -20,3 +20,8 @@ hook_add = '''
         source ~/.vim/rc/plugins/lightline.rc.vim
     endif
 '''
+
+
+#tpope/vim-unimpaired
+[[plugins]]
+repo = 'tpope/vim-unimpaired'

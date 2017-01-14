@@ -3,7 +3,7 @@ syntax on
 "改行した後の行のインデントの深さを、前の行と同じに
 set noautoindent
 "タブで挿入する文字をスペースに
-set expandtab
+set noexpandtab
 "タブの幅を指定します。
 set tabstop=4
 "自動インデントの幅を指定します
@@ -42,3 +42,10 @@ set ignorecase
 set smartcase
 "修正したファイルが保存しなくても他のバッファに移れる
 set hidden
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript,jscript setlocal omnifunc=javascriptcomplete#CompleteJS
+"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags

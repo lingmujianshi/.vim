@@ -49,3 +49,8 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript,jscript setlocal omnifunc=javascriptcomplete#CompleteJS
 "autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Dictionary
+let texdictpath = resolve(expand(g:DIR . '/dict/tex.dict'))
+execute 'autocmd FileType tex setlocal dictionary =' . fnameescape(texdictpath)
+execute 'autocmd FileType plaintex setlocal dictionary =' . fnameescape(texdictpath)

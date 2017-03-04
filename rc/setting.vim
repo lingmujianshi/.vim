@@ -51,6 +51,4 @@ autocmd FileType javascript,jscript setlocal omnifunc=javascriptcomplete#Complet
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " Dictionary
-let texdictpath = resolve(expand(g:DIR . '/dict/tex.dict'))
-execute 'autocmd FileType tex setlocal dictionary =' . fnameescape(texdictpath)
-execute 'autocmd FileType plaintex setlocal dictionary =' . fnameescape(texdictpath)
+execute 'autocmd FileType tex,plaintex setlocal dictionary =' . resolve(expand(g:DIR . '/dict/tex.dict'))

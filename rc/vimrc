@@ -45,6 +45,7 @@ endfunction "}}}
 call s:source_rc('dein.rc.vim')
 call s:source_rc('setting.vim')
 call s:source_rc('capture.vim')
+call s:source_rc('visual_area_search.vim')
 
 "プラグインテスト用のパス
 set runtimepath+=~/MEGAsync/vim/test/

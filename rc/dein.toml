@@ -25,3 +25,8 @@ hook_add = '''
 #tpope/vim-unimpaired
 [[plugins]]
 repo = 'tpope/vim-unimpaired'
+
+# Prettyprint vim variables.
+[[plugins]]
+repo = 'thinca/vim-prettyprint'
+

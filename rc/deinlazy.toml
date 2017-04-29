@@ -18,6 +18,7 @@ repo = 'Shougo/dein.vim'
 #'''
 
 #jedi-vim (Python complete tool)
+
 [[plugins]]
 repo = 'davidhalter/jedi-vim'
 on_ft = 'python'
@@ -28,3 +29,12 @@ hook_add = '''
   autocmd FileType python setlocal completeopt-=preview
 '''
 
+[[plugins]]
+repo = 'OmniSharp/omnisharp-vim'
+build = {
+'windows':'MSBuild.exe server/OmniSharp.sln /p:Platform="Any CPU"',
+'mac':'xbuild server/OmniSharp.sln',
+}
+hook_add = '''
+  let g:OmniSharp_start_server = 0
+'''
